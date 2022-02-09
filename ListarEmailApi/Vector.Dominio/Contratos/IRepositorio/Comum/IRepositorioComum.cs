@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Vector.Dominio.Contratos.IRepositorio.Comum
 {
-    public interface IRepositorioComum
+    public interface IRepositorioComum<TEntidade>
     {
+        void Adicionar(TEntidade entidade);
+        void Alterar(TEntidade entidade);
+        void Remover(TEntidade entidade);
+
+        List<TEntidade> SelecionarLista();
     }
 }

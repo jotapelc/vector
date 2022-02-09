@@ -4,11 +4,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Contratos\IRepositorio\Comum\" />
-    <Folder Include="Contratos\IServico\Comum\" />
-    <Folder Include="Entidades\" />
-    <Folder Include="Servicos\Comum\" />
-  </ItemGroup>
-
 </Project>

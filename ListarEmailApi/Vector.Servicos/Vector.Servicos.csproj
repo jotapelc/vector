@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EmailApi\Contrato\" />
-    <Folder Include="EmailApi\Request\" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Vector.Aplicacao\Vector.Aplicacao.csproj" />
   </ItemGroup>
 
 </Project>
