@@ -10,6 +10,6 @@ namespace Vector.Aplicacao.Contrato
 {
     public interface IAvatarMockAplicacao
     {
-        List<AvatarMockDTO> ListarAvatar();
+        List<AvatarMock> ListarAvatar();
     }
 }

@@ -25,10 +25,10 @@ namespace Vector.Aplicacao.Aplicacao
             this.mapper = mapper;
         }
  
-        public List<AvatarMockDTO> ListarAvatar()
+        public List<AvatarMock> ListarAvatar()
         {
 
-            var lista = new List<AvatarMockDTO>();
+            var lista = new List<AvatarMock>();
             try
             {
                 var listas = request.ListarAvatar();
@@ -37,7 +37,7 @@ namespace Vector.Aplicacao.Aplicacao
                 {
                     return null;
                 }
-                lista = mapper.Map<List<AvatarMockDTO>>(listas);
+                lista = mapper.Map<List<AvatarMock>>(listas);
             }
             catch (Exception)
             {

@@ -16,36 +16,36 @@ namespace Vector.Infra.Data.Mapeamento
         {
 
             builder.ToTable("avatares_mock");
-            builder.HasKey(pk => new { pk.id });
+            builder.HasKey(pk => new { pk.Id });
 
-            builder.Property(pk => pk.id)
+            builder.Property(pk => pk.Id)
                 .IsRequired()
                 .ValueGeneratedOnAdd();
 
-            builder.Property(x => x.name)
+            builder.Property(x => x.Name)
                 .HasColumnName("name")
                 .HasMaxLength(300)
                 .IsRequired();
 
-            builder.Property(x => x.mail)
+            builder.Property(x => x.Mail)
                 .HasColumnName("mail")
                 .HasMaxLength(300)
                 .IsRequired();
 
-            builder.Property(x => x.avatar)
+            builder.Property(x => x.Avatar)
                 .HasColumnName("avatar")
                 .HasMaxLength(300)
                 .IsRequired();
 
-            builder.Property(x => x.createdAt)
+            builder.Property(x => x.CreatedAt)
                 .HasColumnName("createdAt")
-                .HasColumnType("datetime")
+                .HasColumnType("datetime2")
                 .IsRequired();
 
-            //builder.Property(x => x.RequestIn)
-            //    .HasColumnName("requestIn")
-            //     .HasColumnType("datetime2")
-            //     .IsRequired();
+            builder.Property(x => x.SavedIn)
+                .HasColumnName("savedIn")
+                 .HasColumnType("datetime2")
+                 .IsRequired();
         }
     }
 }

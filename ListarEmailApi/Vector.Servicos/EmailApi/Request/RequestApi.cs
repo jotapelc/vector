@@ -19,11 +19,13 @@ namespace Vector.Servicos.EmailApi.Request
             HttpClient httpClient = new HttpClient();
 
             httpClient.BaseAddress = new Uri("https://6064ac2bf09197001778660d.mockapi.io");
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
 
             var result = httpClient.GetAsync("api/test-api")
                 .Result.Content.ReadAsStringAsync().Result;
 
-
+     
             return JsonConvert.DeserializeObject<List<AvatarMock>>(result);
         }
 
