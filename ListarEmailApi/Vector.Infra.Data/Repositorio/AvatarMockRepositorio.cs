@@ -23,7 +23,7 @@ namespace Vector.Infra.Data.Repositorio
         {
             return contexto.AvataresMock
                 .AsNoTracking()
-                .OrderBy(x => x.id)
+                .OrderBy(x => x.Id)
                 .ToList();
         }
 
@@ -31,7 +31,7 @@ namespace Vector.Infra.Data.Repositorio
         {
             return contexto.AvataresMock
                 .AsNoTracking()
-                .OrderBy(x => x.id)
+                .OrderBy(x => x.Id)
                 .ToList();
         }
     }

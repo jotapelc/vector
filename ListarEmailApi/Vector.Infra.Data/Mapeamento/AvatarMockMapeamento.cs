@@ -19,9 +19,9 @@ namespace Vector.Infra.Data.Mapeamento
             builder.HasKey(pk => new { pk.Id });
 
             builder.Property(pk => pk.Id)
-                .IsRequired()
-                .ValueGeneratedOnAdd();
-
+                .ValueGeneratedNever()
+                .IsRequired();
+    
             builder.Property(x => x.Name)
                 .HasColumnName("name")
                 .HasMaxLength(300)
