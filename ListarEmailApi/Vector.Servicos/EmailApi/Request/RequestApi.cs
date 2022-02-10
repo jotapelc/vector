@@ -3,37 +3,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using Vector.Aplicacao.DTO;
+using Vector.Dominio.Entidades;
 using Vector.Servicos.EmailApi.Contrato;
 
 namespace Vector.Servicos.EmailApi.Request
 {
     public class RequestApi : IRequestApi
     {
-        private HttpClient httpClient = new HttpClient();
 
-        public RequestApi()
+        public List<AvatarMock> ListarAvatar()
         {
-            httpClient.BaseAddress = new Uri("https://6064ac2bf09197001778660d.mockapi.io/api/");
+            HttpClient httpClient = new HttpClient();
+
+            httpClient.BaseAddress = new Uri("https://6064ac2bf09197001778660d.mockapi.io");
+
+            var result = httpClient.GetAsync("api/test-api")
+                .Result.Content.ReadAsStringAsync().Result;
+
+
+            return JsonConvert.DeserializeObject<List<AvatarMock>>(result);
         }
 
-        public async Task<List<AvatarMockDTO>> ListarAvatar()
-        {
-            HttpResponseMessage resposta = await httpClient.GetAsync("test-api");
-            if (resposta.IsSuccessStatusCode)
-            {
-                var dados = await resposta.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<AvatarMockDTO>>(dados);
-            }
-
-            return new List<AvatarMockDTO>();
-        }
-
-        public List<AvatarMockDTO> ListarEmailAgrupadoPorData()
+        public List<AvatarMock> ListarEmailAgrupadoPorData()
         {
             throw new NotImplementedException();
         }
+
     }
 }

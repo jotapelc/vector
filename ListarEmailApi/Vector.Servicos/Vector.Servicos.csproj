@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="5.0.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vector.Aplicacao\Vector.Aplicacao.csproj" />
+    <ProjectReference Include="..\Vector.Dominio\Vector.Dominio.csproj" />
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,7 @@ namespace Vector.Aplicacao.DTO
 {
     public class AvatarMockDTO
     {
-        public int id { get; set; }
+        public string id { get; set; }
 
         public string name { get; set; }
 
@@ -16,8 +16,7 @@ namespace Vector.Aplicacao.DTO
 
         public string avatar { get; set; }
 
-        public DateTime createdAt { get; set; }
+        public string createdAt { get; set; }
 
-        public DateTime requestIn { get; set; }
     }
 }
