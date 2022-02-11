@@ -13,7 +13,7 @@ namespace Vector.Dominio.Entidades
     {
         public AvatarMock()
         {
-            SavedIn = DateTime.Now;
+            SavedIn = DateTime.Today;
         }
      
         public int Id { get; set; }

@@ -22,6 +22,11 @@ namespace Vector.Dominio.Servicos.Comum
             repositorioComum.Adicionar(entidade);
         }
 
+        public void BulkInsert(List<TEntidade> entidade)
+        {
+            repositorioComum.BulkInsert(entidade);
+        }
+
         public void Alterar(TEntidade entidade)
         {
             repositorioComum.Alterar(entidade);
@@ -30,6 +35,11 @@ namespace Vector.Dominio.Servicos.Comum
         public void Remover(TEntidade entidade)
         {
             repositorioComum.Remover(entidade);
+        }
+
+        public void BulkUpdate(List<TEntidade> entidade)
+        {
+            repositorioComum.BulkUpdate(entidade);
         }
 
         public List<TEntidade> SelecionarLista()

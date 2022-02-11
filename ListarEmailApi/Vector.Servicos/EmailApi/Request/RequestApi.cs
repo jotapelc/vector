@@ -14,7 +14,7 @@ namespace Vector.Servicos.EmailApi.Request
     public class RequestApi : IRequestApi
     {
 
-        public List<AvatarMock> ListarAvatar()
+        public List<AvatarMock> ListarApi()
         {
             HttpClient httpClient = new HttpClient();
 

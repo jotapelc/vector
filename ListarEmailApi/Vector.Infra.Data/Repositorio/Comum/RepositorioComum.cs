@@ -13,6 +13,7 @@ namespace Vector.Infra.Data.Repositorio.Comum
     {
         protected readonly Context contexto;
         protected readonly DbSet<TEntidade> dbSet;
+        
 
         public RepositorioComum(Context contexto)
         {
@@ -25,10 +26,21 @@ namespace Vector.Infra.Data.Repositorio.Comum
             dbSet.Add(entidade);
             contexto.SaveChanges();
         }
+        public void BulkInsert(List<TEntidade> entidade)
+        {
+            dbSet.AddRange(entidade);
+            contexto.SaveChanges();
+        }
 
         public void Alterar(TEntidade entidade)
         {
             dbSet.Update(entidade);
+            contexto.SaveChanges();
+        }
+
+        public void BulkUpdate(List<TEntidade> entidade)
+        {
+            dbSet.UpdateRange(entidade);
             contexto.SaveChanges();
         }
 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Vector.Aplicacao.Contrato;
+using Vector.Dominio.Entidades;
 using VectorApi.Controllers.Base;
 
 namespace VectorApi.Controllers
@@ -23,8 +24,21 @@ namespace VectorApi.Controllers
         {
             try
             {
-                var resultado = aplicacao.ListarAvatar();
-                return Ok(resultado);
+                var validaDia = aplicacao.ListarAvatar();
+
+                if (validaDia == null)
+                {
+                    validaDia = aplicacao.ListarApi();
+                    aplicacao.CriarNoBd(validaDia);
+                }
+                else if (validaDia[5].SavedIn < DateTime.Today)
+                {
+                    validaDia = aplicacao.ListarApi();
+                    aplicacao.BulkUpdate(validaDia);
+                }
+   
+                return Ok(validaDia);
+              
             }
             catch (Exception ex)
             {
@@ -32,5 +46,6 @@ namespace VectorApi.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Ops, houve um erro.: {ex.Message}");
             }
         }
+
     }
 }

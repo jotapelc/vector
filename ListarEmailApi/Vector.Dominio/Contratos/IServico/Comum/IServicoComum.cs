@@ -11,7 +11,8 @@ namespace Vector.Dominio.Contratos.IServico.Comum
         void Adicionar(TEntidade entidade);
         void Alterar(TEntidade entidade);
         void Remover(TEntidade entidade);
-
+        void BulkInsert(List<TEntidade> entidade);
+        void BulkUpdate(List<TEntidade> entidade);
         List<TEntidade> SelecionarLista();
     }
 }

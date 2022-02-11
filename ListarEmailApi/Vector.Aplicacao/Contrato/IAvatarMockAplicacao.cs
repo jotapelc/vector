@@ -10,6 +10,10 @@ namespace Vector.Aplicacao.Contrato
 {
     public interface IAvatarMockAplicacao
     {
+        List<AvatarMock> ListarAvatarNoBanco();
         List<AvatarMock> ListarAvatar();
+        List<AvatarMock> ListarApi();
+        AvatarMock CriarNoBd(List<AvatarMock> avatarMock);
+        AvatarMock BulkUpdate(List<AvatarMock> avatarMock);
     }
 }

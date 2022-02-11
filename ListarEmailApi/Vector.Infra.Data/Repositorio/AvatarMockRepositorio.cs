@@ -19,6 +19,8 @@ namespace Vector.Infra.Data.Repositorio
             _contexto = contexto;
         }
 
+
+
         public List<AvatarMock> ListarAvatar()
         {
             return contexto.AvataresMock

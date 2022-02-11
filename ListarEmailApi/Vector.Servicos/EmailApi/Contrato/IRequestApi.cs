@@ -9,7 +9,7 @@ namespace Vector.Servicos.EmailApi.Contrato
 {
     public interface IRequestApi
     {
-        List<AvatarMock> ListarAvatar();
+        List<AvatarMock> ListarApi();
         List<AvatarMock> ListarEmailAgrupadoPorData();
     }
 }

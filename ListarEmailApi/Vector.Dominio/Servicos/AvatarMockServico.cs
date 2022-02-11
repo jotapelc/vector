@@ -28,5 +28,7 @@ namespace Vector.Dominio.Servicos
         {
             return repositorio.ListarEmailAgrupadoPorData();
         }
+
+   
     }
 }
