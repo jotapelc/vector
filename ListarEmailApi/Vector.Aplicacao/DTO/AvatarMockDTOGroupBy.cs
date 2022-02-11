@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Vector.Aplicacao.DTO
 {
-    public class AvatarMockDTO
+    public class AvatarMockDTOGroupBy
     {
+        public DateTime CreatedAt { get; set; }
         public string Mail { get; set; }
+        
     }
-
 }

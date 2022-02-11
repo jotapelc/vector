@@ -31,10 +31,29 @@ namespace Vector.Infra.Data.Repositorio
 
         public List<AvatarMock> ListarEmailAgrupadoPorData()
         {
-            return contexto.AvataresMock
-                .AsNoTracking()
-                .OrderBy(x => x.Id)
-                .ToList();
+            var query = contexto.AvataresMock
+                 .GroupBy(o => new { o.Mail, o.CreatedAt })
+                 .Select(g => new AvatarMock()
+                 {
+                     Mail = g.Key.Mail,
+                     CreatedAt = g.Key.CreatedAt
+                 }).ToList();
+
+            return new List<AvatarMock>(query);
         }
+
+        //public List<AvatarMock> ListarApenasEmail()
+        //{
+        //List<AvatarMock> listaEmail = (from a in contexto.AvataresMock
+        //                               select new AvatarMock { 
+        //                                   Mail = a.Mail,
+        //                                   CreatedAt = a.CreatedAt
+        //                               }).ToString()
+        //                               .GroupBy(x => x.CreatedAt).Select(x => new {
+
+        //                               })
+        //                               .ToList();
+        //return listaEmail;
+        //}
     }
 }

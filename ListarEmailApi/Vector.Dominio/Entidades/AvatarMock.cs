@@ -26,7 +26,7 @@ namespace Vector.Dominio.Entidades
        
         public DateTime CreatedAt { get; set; }
 
-        public DateTime SavedIn { get; private set; }
+        public DateTime SavedIn { get; set; }
     }
    
 }

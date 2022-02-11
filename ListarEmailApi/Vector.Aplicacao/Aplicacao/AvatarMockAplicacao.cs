@@ -25,97 +25,68 @@ namespace Vector.Aplicacao.Aplicacao
             this.mapper = mapper;
         }
 
-        public AvatarMock CriarNoBd(List<AvatarMock> avatarMock)
+        public List<AvatarMockDTO> ListarAvatar()
         {
-
+            var listaBD = servico.ListarAvatar();
             try
             {
-                servico.BulkInsert(avatarMock);
-
-            }
-            catch (Exception ex)
-            {
-
-                return null;
-            }
-            return null;
-
-        }
-
-        public AvatarMock BulkUpdate(List<AvatarMock> avatarMock)
-        {
-            try
-            {
-                servico.BulkUpdate(avatarMock);
-            }
-            catch (Exception ex)
-            {
-
-                return null;
-            }
-            return null;
-
-        }
-
-        public List<AvatarMock> ListarAvatar()
-        {
-            var listaDb = new List<AvatarMock>();
-          
-            try
-            {
-                listaDb = servico.ListarAvatar();
-                if (listaDb[0].Id < 0)
+                if (listaBD.Count <= 0)
                 {
-                    ListarApi();
+                    listaBD = ListarApi();
+                    servico.BulkInsert(listaBD);
                 }
+                else if (listaBD[0].SavedIn < DateTime.Today)
+                {
+                    listaBD = ListarApi();
+                    servico.BulkUpdate(listaBD);
+                }
+
+                var resultado = mapper.Map<List<AvatarMockDTO>>(listaBD);
+                return resultado;
             }
             catch (Exception ex)
             {
-
                 throw;
             }
-            return listaDb;
-
-
-        }
-
-        public List<AvatarMock> ListarAvatarNoBanco()
-        {
-            var listaDb = new List<AvatarMock>();
-            try
-            {
-                listaDb = servico.SelecionarLista();
-                if (listaDb == null)
-                    return null;
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-            return listaDb;
         }
 
         public List<AvatarMock> ListarApi()
         {
-            var lista = new List<AvatarMock>();
+            var novaLista = new List<AvatarMock>();
             try
             {
-                var listas = request.ListarApi();
+                var lista = request.ListarApi();
 
                 if (lista == null)
-                {
                     return null;
-                }
-                lista = mapper.Map<List<AvatarMock>>(listas);
+
+                novaLista = lista;
             }
             catch (Exception)
             {
-
                 return null;
             }
-
-            return lista;
+            return novaLista;
         }
+
+        public List<AvatarMockDTOGroupBy> ListarEmailAgrupadoPorData()
+        {
+            var lista = servico.ListarEmailAgrupadoPorData();
+            if (lista == null)
+                return null;
+
+            var resultado = mapper.Map<List<AvatarMockDTOGroupBy>>(lista);
+            return resultado;
+
+        }
+
+        //public List<AvatarMock> ListarApenasEmail()
+        //{
+        //    var listarMail = servico.ListarApenasEmail();
+        //    if (listarMail == null)
+        //        ListarAvatar();
+
+        //    return listarMail; 
+        //}
     }
 }

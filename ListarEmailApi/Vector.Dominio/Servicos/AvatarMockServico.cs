@@ -29,6 +29,12 @@ namespace Vector.Dominio.Servicos
             return repositorio.ListarEmailAgrupadoPorData();
         }
 
-   
+        //public List<AvatarMock> ListarApenasEmail()
+        //{
+        //    return repositorio.ListarApenasEmail();
+        //}
+
+
+
     }
 }

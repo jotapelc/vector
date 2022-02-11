@@ -13,6 +13,7 @@ namespace VectorApi.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<AvatarMock, AvatarMockDTO>().ReverseMap();
+            CreateMap<AvatarMock, AvatarMockDTOGroupBy>().ReverseMap();
         }
     }
 }

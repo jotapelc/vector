@@ -61,7 +61,7 @@ namespace VectorApi
             services.AddScoped<IRequestApi, RequestApi>();
             #endregion
 
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
             services.AddControllers();
