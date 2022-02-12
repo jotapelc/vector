@@ -12,7 +12,9 @@ namespace Vector.Dominio.Contratos.IRepositorio
     {
         List<AvatarMock> ListarAvatar();
         List<AvatarMock> ListarEmailAgrupadoPorData();
+        List<AvatarMock> ListarApenasEmail();
+        //List<string> ListarEmailLimpo();
 
-        //List<AvatarMock> ListarApenasEmail();
+        string[] ListarEmailLimpo();
     }
 }

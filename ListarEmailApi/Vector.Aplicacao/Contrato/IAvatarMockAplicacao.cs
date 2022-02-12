@@ -10,13 +10,12 @@ namespace Vector.Aplicacao.Contrato
 {
     public interface IAvatarMockAplicacao
     {
-        //List<AvatarMock> ListarAvatarNoBanco();
-        List<AvatarMockDTO> ListarAvatar();
+        //List<AvatarMockDTO> ListarAvatar();
+        string ListarAvatar();
         List<AvatarMock> ListarApi();
 
         List<AvatarMockDTOGroupBy> ListarEmailAgrupadoPorData();
-        //List<AvatarMock> ListarApenasEmail();
-        //AvatarMock CriarNoBd(List<AvatarMock> avatarMock);
-        //AvatarMock BulkUpdate(List<AvatarMock> avatarMock);
+        List<AvatarMockDTO> ListarApenasEmail();
+        string ListarEmailLimpo();
     }
 }

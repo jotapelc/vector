@@ -37,12 +37,44 @@ namespace VectorApi.Controllers
             }
         }
 
+        [HttpGet("ListarApenasEmail")]
+        public IActionResult ListarApenasEmail()
+        {
+            try
+            {
+                var validaDia = aplicacao.ListarApenasEmail();
+                return Ok(validaDia);
+
+            }
+            catch (Exception ex)
+            {
+
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Ops, houve um erro.: {ex.Message}");
+            }
+        }
+
         [HttpGet("GroupByDate")]
         public IActionResult ListaAgrupadaPorData()
         {
             try
             {
                 var outro = aplicacao.ListarEmailAgrupadoPorData();
+                return Ok(outro);
+
+            }
+            catch (Exception ex)
+            {
+
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Ops, houve um erro.: {ex.Message}");
+            }
+        }
+
+        [HttpGet("emailLimpo")]
+        public IActionResult EmailLmpo()
+        {
+            try
+            {
+                var outro = aplicacao.ListarEmailLimpo();
                 return Ok(outro);
 
             }

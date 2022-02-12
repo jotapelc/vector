@@ -42,18 +42,23 @@ namespace Vector.Infra.Data.Repositorio
             return new List<AvatarMock>(query);
         }
 
-        //public List<AvatarMock> ListarApenasEmail()
-        //{
-        //List<AvatarMock> listaEmail = (from a in contexto.AvataresMock
-        //                               select new AvatarMock { 
-        //                                   Mail = a.Mail,
-        //                                   CreatedAt = a.CreatedAt
-        //                               }).ToString()
-        //                               .GroupBy(x => x.CreatedAt).Select(x => new {
+        public List<AvatarMock> ListarApenasEmail()
+        {
+            return null;
+        }
 
-        //                               })
-        //                               .ToList();
-        //return listaEmail;
+        //public List<string> ListarEmailLimpo()
+        //{
+        //    return contexto.AvataresMock
+        //        .Select(x => x.Mail)
+        //        .ToList();
         //}
+
+        public string[] ListarEmailLimpo()
+        {
+            return contexto.AvataresMock
+                .Select(x => x.Mail)
+                .ToArray();
+        }
     }
 }

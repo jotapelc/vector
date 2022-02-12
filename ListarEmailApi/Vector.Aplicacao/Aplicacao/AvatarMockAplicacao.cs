@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Nancy.Json;
+using Nancy.Json.Simple;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,7 @@ namespace Vector.Aplicacao.Aplicacao
             this.mapper = mapper;
         }
 
-        public List<AvatarMockDTO> ListarAvatar()
+        public string ListarAvatar()
         {
             var listaBD = servico.ListarAvatar();
             try
@@ -41,7 +43,9 @@ namespace Vector.Aplicacao.Aplicacao
                     servico.BulkUpdate(listaBD);
                 }
 
-                var resultado = mapper.Map<List<AvatarMockDTO>>(listaBD);
+                var resultado = ListarEmailLimpo();
+              
+
                 return resultado;
             }
             catch (Exception ex)
@@ -80,13 +84,27 @@ namespace Vector.Aplicacao.Aplicacao
 
         }
 
-        //public List<AvatarMock> ListarApenasEmail()
-        //{
-        //    var listarMail = servico.ListarApenasEmail();
-        //    if (listarMail == null)
-        //        ListarAvatar();
+        public List<AvatarMockDTO> ListarApenasEmail()
+        {
+            var listarMail = servico.ListarApenasEmail();
+            if (listarMail == null)
+                ListarAvatar();
 
-        //    return listarMail; 
-        //}
+            var resultado = mapper.Map<List<AvatarMockDTO>>(listarMail);
+    
+            return resultado;
+        }
+
+        public string ListarEmailLimpo()
+        {
+            
+            var emails = servico.ListarEmailLimpo();
+
+            JsonObject character = new JsonObject();
+            character.Add("emails", emails );
+
+            var json = new JavaScriptSerializer().Serialize(character);
+            return json;
+        }
     }
 }
