@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Nancy.Json;
 using Nancy.Json.Simple;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -79,6 +81,11 @@ namespace Vector.Aplicacao.Aplicacao
             if (lista == null)
                 return null;
 
+
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            serializer.Serialize(lista);
+
+
             var resultado = mapper.Map<List<AvatarMockDTOGroupBy>>(lista);
             return resultado;
 
@@ -105,6 +112,38 @@ namespace Vector.Aplicacao.Aplicacao
 
             var json = new JavaScriptSerializer().Serialize(character);
             return json;
+        }
+
+        public string LIstarData()
+        {
+            var datas = servico.LIstarData();
+            var resultado = mapper.Map<List<AvatarMockDTOGroupBy>>(datas);
+            List<AvatarMockDTOGroupBy> estancia = new(resultado);
+
+            //var query = from avatares in estancia
+            //          group avatares by avatares.CreatedAt.Hour;
+
+            var query = from avatars in estancia
+                        group new { avatars.CreatedAt, avatars.Mail }
+                        by avatars.CreatedAt.Hour into newGroup
+                        select newGroup;
+
+            foreach (var item in query)
+            {
+                Console.WriteLine(item.Key);
+
+                foreach (var c in item)
+                {
+                    Console.WriteLine(c.Mail);
+
+                }
+            }
+
+            dynamic dynJson = JsonConvert.SerializeObject(query);
+            Console.WriteLine("------------------------------------------------------");
+            return dynJson; 
+
+ 
         }
     }
 }

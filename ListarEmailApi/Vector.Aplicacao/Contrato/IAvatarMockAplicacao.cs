@@ -17,5 +17,7 @@ namespace Vector.Aplicacao.Contrato
         List<AvatarMockDTOGroupBy> ListarEmailAgrupadoPorData();
         List<AvatarMockDTO> ListarApenasEmail();
         string ListarEmailLimpo();
+
+        string LIstarData();
     }
 }

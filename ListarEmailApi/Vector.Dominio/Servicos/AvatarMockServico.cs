@@ -35,6 +35,11 @@ namespace Vector.Dominio.Servicos
         }
 
 
+        public List<AvatarMock> LIstarData()
+        {
+            return repositorio.LIstarData();
+        }
+
         //public List<string> ListarEmailLimpo()
         //{
         //    return repositorio.ListarEmailLimpo();

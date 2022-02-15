@@ -14,6 +14,8 @@ namespace Vector.Dominio.Contratos.IServico
         List<AvatarMock> ListarEmailAgrupadoPorData();
         List<AvatarMock> ListarApenasEmail();
         //List<string> ListarEmailLimpo();
+        List<AvatarMock> LIstarData();
+
 
         string[] ListarEmailLimpo();
     }

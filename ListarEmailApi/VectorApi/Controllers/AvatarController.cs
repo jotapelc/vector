@@ -84,5 +84,21 @@ namespace VectorApi.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Ops, houve um erro.: {ex.Message}");
             }
         }
+
+        [HttpGet("data")]
+        public IActionResult data()
+        {
+            try
+            {
+                var outro = aplicacao.LIstarData();
+                return Ok(outro);
+
+            }
+            catch (Exception ex)
+            {
+
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Ops, houve um erro.: {ex.Message}");
+            }
+        }
     }
 }

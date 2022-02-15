@@ -15,6 +15,8 @@ namespace Vector.Dominio.Contratos.IRepositorio
         List<AvatarMock> ListarApenasEmail();
         //List<string> ListarEmailLimpo();
 
+        List<AvatarMock> LIstarData();
+
         string[] ListarEmailLimpo();
     }
 }
