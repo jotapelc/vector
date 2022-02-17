@@ -21,12 +21,12 @@ namespace UsuariosApi.Controllers
         [HttpPost]
         public IActionResult CadastraUsuario(CreateUsuarioDTO createUsuarioDTO)
         {
-            Result resultado = _cadastroService.Cadastrarusuario(createUsuarioDTO);
+            Result resultado = _cadastroService.CadastrarUsuario(createUsuarioDTO);
 
             if (resultado.IsFailed)
                 return StatusCode(500);
 
-            return Ok();
+            return Ok(resultado.Successes) ;
         }
     }
 }

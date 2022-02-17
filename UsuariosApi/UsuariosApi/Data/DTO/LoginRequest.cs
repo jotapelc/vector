@@ -9,7 +9,7 @@ namespace UsuariosApi.Data.DTO
     public class LoginRequest
     {
         [Required]
-        public string Username { get; set; }
+        public string UserName { get; set; }
         [Required]
         public string Password { get; set; }
 

@@ -4,13 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace UsuariosApi.Models
+namespace UsuariosApi.Data.DTO
 {
-    public class Usuario
+    public class SolicitaResetRequest
     {
         [Required]
-        public int Id { get; set; }
-        public string UserName { get; set; }
         public string Email { get; set; }
     }
 }
