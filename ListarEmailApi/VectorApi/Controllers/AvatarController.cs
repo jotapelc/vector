@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,14 @@ namespace VectorApi.Controllers
         }
 
         [HttpGet("ListByMail")]
-        public  IActionResult ListarAvatar()
+        [Authorize(Roles = "admin")]
+        public IActionResult ListarAvatar()
         {
             try
             {
                 var validaDia = aplicacao.ListarAvatar();
-                return Ok(validaDia) ;
-              
+                return Ok(validaDia);
+
             }
             catch (Exception ex)
             {
@@ -38,6 +40,7 @@ namespace VectorApi.Controllers
         }
 
         [HttpGet("ListarApenasEmail")]
+        [Authorize(Roles = "admin")]
         public IActionResult ListarApenasEmail()
         {
             try
@@ -70,6 +73,7 @@ namespace VectorApi.Controllers
         }
 
         [HttpGet("emailLimpo")]
+        [Authorize(Roles = "admin")]
         public IActionResult EmailLmpo()
         {
             try
@@ -86,6 +90,7 @@ namespace VectorApi.Controllers
         }
 
         [HttpGet("data")]
+        [Authorize(Roles = "admin")]
         public IActionResult data()
         {
             try
