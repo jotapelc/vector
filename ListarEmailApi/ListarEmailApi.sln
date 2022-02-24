@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vector.Dominio", "Vector.Do
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{0D47F464-2355-4687-B403-06BB33FDFA85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector.Infra.Data", "Vector.Infra.Data\Vector.Infra.Data.csproj", "{50401F43-D43B-4CBC-BE80-A596FA03CAB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vector.Infra.Data", "Vector.Infra.Data\Vector.Infra.Data.csproj", "{50401F43-D43B-4CBC-BE80-A596FA03CAB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vector.ListarAvatar.Testes", "Vector.ListarAvatar.Testes\Vector.ListarAvatar.Testes.csproj", "{AC246A48-EBBA-4862-BC98-668AE7A30715}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{50401F43-D43B-4CBC-BE80-A596FA03CAB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50401F43-D43B-4CBC-BE80-A596FA03CAB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50401F43-D43B-4CBC-BE80-A596FA03CAB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC246A48-EBBA-4862-BC98-668AE7A30715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC246A48-EBBA-4862-BC98-668AE7A30715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC246A48-EBBA-4862-BC98-668AE7A30715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC246A48-EBBA-4862-BC98-668AE7A30715}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{6ECC1655-34DE-4874-A656-FD8B0E0577F5} = {8E45775D-373A-41DE-8BCB-909CB6595745}
 		{0D47F464-2355-4687-B403-06BB33FDFA85} = {EC7CFBF4-015E-49CB-96FD-E126E2F2B705}
 		{50401F43-D43B-4CBC-BE80-A596FA03CAB4} = {0D47F464-2355-4687-B403-06BB33FDFA85}
+		{AC246A48-EBBA-4862-BC98-668AE7A30715} = {80A47A6F-9B0D-430B-83EB-577BF414E3BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72F809CC-01E1-4E89-84C2-B568BA2ACE42}
