@@ -62,7 +62,7 @@ namespace Vector.Infra.Data.Repositorio
 
 
 
-
+            // send a new foto
 
 
         }
