@@ -50,15 +50,6 @@ namespace Vector.Infra.Data.Repositorio
         public List<AvatarMock> LIstarData()
         {
 
-            //var saida = (from avatars in contexto.AvataresMock
-            //             select new 
-            //             {
-            //                 avatars.CreatedAt,
-            //                 avatars.Mail
-            //             }).ToArray();
-
-            //return saida;
-
             return contexto.AvataresMock
                     .Select(cli => new AvatarMock
                     {
@@ -67,39 +58,8 @@ namespace Vector.Infra.Data.Repositorio
       
                     }).ToList();
 
-            //return contexto.AvataresMock
-            //    .AsNoTracking()
-            //    .ToList();
-            //int[] oi = null;
-            //string[] vs = null;
-            //var datas = contexto.AvataresMock
-            //    .GroupBy(o => new { o.Mail, o.CreatedAt })
-            //    .Select(g => new AvatarMock()
-            //    {
-            //        Mail = g.Key.Mail,
-            //        CreatedAt = g.Key.CreatedAt
-            //    }).ToArray();
-
-            //var query = from avatars in datas
-            //           group new { avatars.CreatedAt.Hour, avatars.Mail }
-            //           by avatars.CreatedAt.Hour into newGroup
-            //           select newGroup;
-
-            //foreach (var newGroup in query)
-            //{
-            //    Console.WriteLine($"Hora: {newGroup.Key}");
-            //    oi.Append(newGroup.Key);
-            //    foreach (var item in newGroup)
-            //    {
-            //        Console.WriteLine($"\t Email: { item.Mail}");
-            //        vs.Append( item.Mail );
-            //    }
-            //}
-
-            //Console.WriteLine(oi);
-            //Console.WriteLine(vs);
-
-
+         
+            //fazendo um grande comentario
 
 
 
