@@ -81,6 +81,13 @@ namespace Vector.Infra.Data.Repositorio
             return teste;
         }
 
+        public string[] outro()
+        {
+            return contexto.AvataresMock
+                .Select(x => x.Mail)
+                .ToArray();
+        }
+
         public string[] ListarEmailLimpo()
         {
             return contexto.AvataresMock
