@@ -29,6 +29,74 @@ namespace Vector.Infra.Data.Repositorio
                 .ToList();
         }
 
+
+        public List<AvatarMock> ListarAvatar()
+        {
+            return contexto.AvataresMock
+                .AsNoTracking()
+                .OrderBy(x => x.Id)
+                .ToList();
+        }
+
+        public List<AvatarMock> ListarEmailAgrupadoPorData()
+        {
+            var query = contexto.AvataresMock
+                 .GroupBy(o => new { o.Mail, o.CreatedAt })
+                 .Select(g => new AvatarMock()
+                 {
+                     Mail = g.Key.Mail,
+                     CreatedAt = g.Key.CreatedAt
+                 }).ToList();
+
+            return new List<AvatarMock>(query);
+        }
+
+        public List<AvatarMock> ListarApenasEmail()
+        {
+            return null;
+        }
+
+        public List<AvatarMock> LIstarData()
+        {
+
+            return contexto.AvataresMock
+                    .Select(cli => new AvatarMock
+                    {
+                        CreatedAt = cli.CreatedAt,
+                        Mail = cli.Mail,
+
+                    }).ToList();
+
+
+
+
+
+            // send a new foto
+
+
+        }
+
+        public string teste()
+        {
+            var teste = contexto.AvataresMock
+                .GroupBy(x => x.CreatedAt.Hour.ToString())
+                .Select(g => new
+                {
+                    CreatedAt = g.Key.ToString().ToArray(),
+                    Name = g.Key.ToString().ToArray()
+                })
+                .ToArray().ToString();
+
+            return teste;
+        }
+
+        public string[] ListarEmailLimpo()
+        {
+            return contexto.AvataresMock
+                .Select(x => x.Mail)
+                .ToArray();
+        }
+
         public List<AvatarMock> ListarEmailAgrupadoPorData()
         {
             var query = contexto.AvataresMock
@@ -79,6 +147,73 @@ namespace Vector.Infra.Data.Repositorio
                 .ToArray().ToString();
 
             return teste;
+        }
+
+        public List<AvatarMock> ListarAvatar()
+        {
+            return contexto.AvataresMock
+                .AsNoTracking()
+                .OrderBy(x => x.Id)
+                .ToList();
+        }
+
+        public List<AvatarMock> ListarEmailAgrupadoPorData()
+        {
+            var query = contexto.AvataresMock
+                 .GroupBy(o => new { o.Mail, o.CreatedAt })
+                 .Select(g => new AvatarMock()
+                 {
+                     Mail = g.Key.Mail,
+                     CreatedAt = g.Key.CreatedAt
+                 }).ToList();
+
+            return new List<AvatarMock>(query);
+        }
+
+        public List<AvatarMock> ListarApenasEmail()
+        {
+            return null;
+        }
+
+        public List<AvatarMock> LIstarData()
+        {
+
+            return contexto.AvataresMock
+                    .Select(cli => new AvatarMock
+                    {
+                        CreatedAt = cli.CreatedAt,
+                        Mail = cli.Mail,
+
+                    }).ToList();
+
+
+
+
+
+            // send a new foto
+
+
+        }
+
+        public string teste()
+        {
+            var teste = contexto.AvataresMock
+                .GroupBy(x => x.CreatedAt.Hour.ToString())
+                .Select(g => new
+                {
+                    CreatedAt = g.Key.ToString().ToArray(),
+                    Name = g.Key.ToString().ToArray()
+                })
+                .ToArray().ToString();
+
+            return teste;
+        }
+
+        public string[] ListarEmailLimpo()
+        {
+            return contexto.AvataresMock
+                .Select(x => x.Mail)
+                .ToArray();
         }
 
         public string[] ListarEmailLimpo()
