@@ -89,6 +89,21 @@ namespace Vector.Infra.Data.Repositorio
             return teste;
         }
 
+
+        public string teste22()
+        {
+            var teste = contexto.AvataresMock
+                .GroupBy(x => x.CreatedAt.Hour.ToString())
+                .Select(g => new
+                {
+                    CreatedAt = g.Key.ToString().ToArray(),
+                    Name = g.Key.ToString().ToArray()
+                })
+                .ToArray().ToString();
+
+            return teste;
+        }
+
         public string[] ListarEmailLimpo()
         {
             return contexto.AvataresMock
