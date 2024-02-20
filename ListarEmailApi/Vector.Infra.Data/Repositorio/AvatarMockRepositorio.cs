@@ -99,6 +99,17 @@ namespace Vector.Infra.Data.Repositorio
             return contexto.AvataresMock
                 .Select(x => x.Mail)
                 .ToArray();
+
+      
+            string some2 = string.Empty;
+            string some23 = string.Empty;
+            string some234 = string.Empty;
+
+            
+            string some2 = string.Empty;
+            string some23 = string.Empty;
+            string some234 = string.Empty;
+
         }
 
         public string[] outro222()
