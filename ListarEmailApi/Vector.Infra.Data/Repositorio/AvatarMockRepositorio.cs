@@ -50,15 +50,6 @@ namespace Vector.Infra.Data.Repositorio
         public List<AvatarMock> LIstarData()
         {
 
-            //var saida = (from avatars in contexto.AvataresMock
-            //             select new 
-            //             {
-            //                 avatars.CreatedAt,
-            //                 avatars.Mail
-            //             }).ToArray();
-
-            //return saida;
-
             return contexto.AvataresMock
                     .Select(cli => new AvatarMock
                     {
@@ -72,6 +63,7 @@ namespace Vector.Infra.Data.Repositorio
 
 
 
+            // send a new foto
 
         }
 
@@ -116,6 +108,13 @@ namespace Vector.Infra.Data.Repositorio
             string some2 = string.Empty;
             string some23 = string.Empty;
             string some234 = string.Empty;
+        }
+
+        public string[] outro()
+        {
+            return contexto.AvataresMock
+                .Select(x => x.Mail)
+                .ToArray();
         }
 
         public string[] ListarEmailLimpo()
