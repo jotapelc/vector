@@ -62,7 +62,7 @@ namespace Vector.Infra.Data.Repositorio
 
 
 
-
+            // send a new foto
 
 
         }
@@ -79,6 +79,13 @@ namespace Vector.Infra.Data.Repositorio
                 .ToArray().ToString();
 
             return teste;
+        }
+
+        public string[] outro()
+        {
+            return contexto.AvataresMock
+                .Select(x => x.Mail)
+                .ToArray();
         }
 
         public string[] ListarEmailLimpo()
