@@ -102,6 +102,20 @@ namespace Vector.Infra.Data.Repositorio
                 .ToArray().ToString();
 
             return teste;
+
+            string some = string.Empty;
+            string some2 = string.Empty;
+            string some23 = string.Empty;
+            string some234 = string.Empty;
+
+
+            tring some = string.Empty;
+            string some2 = string.Empty;
+            string some23 = string.Empty;
+            string some234 = string.Empty; tring some = string.Empty;
+            string some2 = string.Empty;
+            string some23 = string.Empty;
+            string some234 = string.Empty;
         }
 
         public string[] ListarEmailLimpo()
